@@ -10,8 +10,6 @@ Online documentation is available at https://deskpro.gitbooks.io/deskpro-apps/.
 ## Basic Tutorial
 This tutorial will walk you through creating a simple DeskPRO app which displays a list of people participating in a ticket.
 
-![screenshot](docs/images/tutorials/basic-1.png)
-
 ### Step 1. Clone the boilerplate
 
 ```
