@@ -1,0 +1,7 @@
+.idea
+.cache
+.storybook
+site
+node_modules
+docs/public
+tests/app
