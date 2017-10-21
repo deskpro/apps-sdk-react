@@ -280,15 +280,22 @@ class DeskproSDK extends React.Component {
    * @returns {XML}
    */
   renderApp = () => {
-    const { component, children } = this.props;
+    const { sdk, component, children } = this.props;
 
     if (!component && !children) {
       throw new Error('App component not set.');
     }
 
-    return React.cloneElement(
-      component || React.Children.only(children),
-      sdkProps(this.props)
+    return (
+      <div>
+        {sdk.ui.loading && this.renderLoading()}
+        <div style={{ display: (sdk.ui.loading ? 'none' : 'block') }}>
+          {React.cloneElement(
+            component || React.Children.only(children),
+            sdkProps(this.props)
+          )}
+        </div>
+      </div>
     );
   };
 
@@ -305,7 +312,7 @@ class DeskproSDK extends React.Component {
           style={{ display: sdk.ui.collapsed ? 'none' : 'block' }}
         >
           {this.renderErrors()}
-          {!sdk.ready || sdk.ui.loading
+          {!sdk.ready
             ? this.renderLoading()
             : this.renderApp()
           }
