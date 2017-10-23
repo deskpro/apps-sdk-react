@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'deskpro-components';
+import { Button } from '@deskpro/react-components';
 import { propKeyFilter } from '../utils/props';
 
 /**

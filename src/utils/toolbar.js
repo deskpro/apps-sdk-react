@@ -1,4 +1,4 @@
-import { UIConstants, UIEvents } from '@deskproapps/deskproapps-sdk-core';
+import { UIConstants, UIEvents } from '@deskpro/apps-sdk-core';
 
 let faLoaded = false;
 

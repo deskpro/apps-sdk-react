@@ -1,7 +1,7 @@
 {
   "name": "@deskpro/apps-sdk-react",
   "version": "0.0.2",
-  "description": "A react-based javascript SDK for building Deskpro Apps powered by the React library",
+  "description": "A react-based javascript SDK for building DeskPRO Apps powered by the React library",
   "main": "dist/index.js",
   "private": false,
   "scripts": {
@@ -55,8 +55,8 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-core": "^1.0.0-beta.18",
-    "deskpro-components": "^1.0.0",
+    "@deskpro/apps-sdk-core": "^1.0.0-beta.18",
+    "@deskpro/react-components": "^1.0.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
