@@ -15,6 +15,7 @@
   },
   "author": "DeskPRO <team@deskpro.com>",
   "license": "BSD-3-Clause",
+  "homepage": "https://github.com/deskpro/apps-sdk-react",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deskpro/apps-sdk-react.git"
