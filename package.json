@@ -1,8 +1,9 @@
 {
-  "name": "deskpro-sdk-react",
+  "name": "@deskpro/apps-sdk-react",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "private": false,
   "scripts": {
     "clean": "rimraf dist",
     "test": "jest ./tests/*/*.test.*",
