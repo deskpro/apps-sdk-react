@@ -1,7 +1,7 @@
 {
   "name": "@deskpro/apps-sdk-react",
   "version": "0.0.1",
-  "description": "",
+  "description": "A react-based javascript SDK for building Deskpro Apps powered by the React library",
   "main": "dist/index.js",
   "private": false,
   "scripts": {
@@ -15,6 +15,13 @@
   },
   "author": "DeskPRO <team@deskpro.com>",
   "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deskpro/apps-sdk-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deskpro/apps-sdk-react/issues"
+  },
   "devDependencies": {
     "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",
