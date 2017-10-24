@@ -1,3 +1,7 @@
+## v0.0.6 - 2017-10-24
+
+* Removes unused babel plugins
+
 ## v0.0.5 - 2017-10-24
 
 * Initial public release
