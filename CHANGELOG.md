@@ -1,3 +1,7 @@
+## Upcoming
+
+* Adds babel-plugin-add-module-exports
+
 ## v0.0.8 - 2017-10-25
 
 * Excludes apps-sdk-core and react-components from bundle
