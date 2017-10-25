@@ -38,6 +38,18 @@ module.exports = (env = {}) => {
           commonjs2: 'react-dom',
           commonjs:  'react-dom',
           amd:       'react-dom'
+        },
+        '@deskpro/apps-sdk-core': {
+          root:      '@deskpro/apps-sdk-core',
+          commonjs2: '@deskpro/apps-sdk-core',
+          commonjs:  '@deskpro/apps-sdk-core',
+          amd:       '@deskpro/apps-sdk-core'
+        },
+        '@deskpro/react-components': {
+          root:      '@deskpro/react-components',
+          commonjs2: '@deskpro/react-components',
+          commonjs:  '@deskpro/react-components',
+          amd:       '@deskpro/react-components'
         }
       }
     ],

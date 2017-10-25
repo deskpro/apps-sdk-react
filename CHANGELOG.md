@@ -1,3 +1,7 @@
+## v0.0.8 - 2017-10-25
+
+* Excludes apps-sdk-core and react-components from bundle
+
 ## v0.0.7 - 2017-10-25
 
 * Fixes webpack production build
