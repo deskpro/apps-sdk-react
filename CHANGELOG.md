@@ -1,3 +1,7 @@
+## v0.0.7 - 2017-10-25
+
+* Fixes webpack production build
+
 ## v0.0.6 - 2017-10-24
 
 * Removes unused babel plugins
