@@ -2,7 +2,8 @@
 .storybook
 site
 node_modules
-docs/public
+dist
+lib
 tests/app
 
 # IDE files

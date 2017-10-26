@@ -1,5 +1,7 @@
 ## Upcoming
 
+* Removes dist from repo
+* Adds lib folder and build
 * Adds redux to dependencies
 
 ## v0.1.0 - 2017-10-26
