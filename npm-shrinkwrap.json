@@ -1,6 +1,6 @@
 {
   "name": "@deskpro/apps-sdk-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@deskpro/apps-dpat": {
       "version": "0.9.1",
