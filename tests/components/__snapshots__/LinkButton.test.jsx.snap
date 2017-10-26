@@ -2,8 +2,7 @@
 
 exports[`LinkButton renders a button 1`] = `
 <button
-  className="dp-button dp-button--l dp-button--primary dp-button--shape-default"
-  disabled={false}
+  className="dp-button dp-button--l dp-button--primary"
   onClick={[Function]}
 >
   Index

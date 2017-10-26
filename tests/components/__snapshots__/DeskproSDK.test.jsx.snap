@@ -3,7 +3,6 @@
 exports[`DeskproSDK renders the prop component 1`] = `
 <ul
   className="dp-list dp-column-drawer-list"
-  role="tree"
 >
   <li
     className="dp-column-drawer--with-controls"
@@ -39,7 +38,6 @@ exports[`DeskproSDK renders the prop component 1`] = `
 exports[`DeskproSDK renders the wrapped component 1`] = `
 <ul
   className="dp-list dp-column-drawer-list"
-  role="tree"
 >
   <li
     className="dp-column-drawer--with-controls"
