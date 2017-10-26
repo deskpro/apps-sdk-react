@@ -1,5 +1,9 @@
 ## Upcoming
 
+## v0.1.2 - 2017-10-26
+
+* Adds .npmignore file
+
 ## v0.1.1 - 2017-10-26
 
 * Removes dist from repo
