@@ -1,5 +1,8 @@
 ## Upcoming
 
+## v0.0.9 - 2017-10-26
+
+* Exports createApp from @deskpro/apps/sdk-core
 * Adds babel-plugin-add-module-exports
 
 ## v0.0.8 - 2017-10-25
