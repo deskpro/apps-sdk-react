@@ -1,5 +1,7 @@
 ## Upcoming
 
+* Adds redux to dependencies
+
 ## v0.1.0 - 2017-10-26
 
 * Removes @deskpro/react-components dependency
