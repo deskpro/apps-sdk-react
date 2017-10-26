@@ -24,7 +24,6 @@
     "url": "https://github.com/deskpro/apps-sdk-react/issues"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -57,9 +56,9 @@
   },
   "dependencies": {
     "@deskpro/apps-sdk-core": "^1.0.0-beta.22",
-    "@deskpro/react-components": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
+    "react-svg-inline": "^2.0.1",
     "redux-form": "^7.0.4",
     "redux-thunk": "^2.2.0"
   },
@@ -67,10 +66,6 @@
     "modulePaths": [
       "src"
     ]
-  },
-  "gh-pages-deploy": {
-    "staticpath": "site",
-    "noprompt": true
   },
   "lint-staged": {
     "*.{js,jsx}": [

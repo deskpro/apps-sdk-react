@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@deskpro/react-components';
 import { propKeyFilter } from '../utils/props';
 
 /**
@@ -79,9 +78,13 @@ class LinkButton extends React.Component {
     const { children, ...props } = this.props;
 
     return (
-      <Button {...propKeyFilter(props, LinkButton.propTypes)} onClick={this.handleClick}>
+      <button
+        className="dp-button dp-button--l dp-button--primary"
+        {...propKeyFilter(props, LinkButton.propTypes)}
+        onClick={this.handleClick}
+      >
         {children}
-      </Button>
+      </button>
     );
   }
 }

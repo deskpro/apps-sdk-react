@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AppEvents, UIEvents } from '@deskpro/apps-sdk-core';
-import { Loader, Alert, DrawerList } from '@deskpro/react-components';
 import { dpappPropType, storePropType } from '../utils/props';
 import * as sdkActions from '../actions/sdkActions';
 import { sdkProps } from '../utils/connect';
 import Route from '../utils/route';
+import Loader from './Loader';
 
 /**
  * Connects DeskPRO apps to the DeskPRO API
@@ -255,9 +255,9 @@ class DeskproSDK extends React.Component {
    */
   renderErrors = () => {
     return this.props.sdk.errors.map(error => (
-      <Alert key={error.id} type="danger" style={{ margin: 10 }}>
+      <div key={error.id} className="dp-alert dp-alert--danger dp-bg--danger" style={{ margin: 10 }}>
         {error.msg}
-      </Alert>
+      </div>
     ));
   };
 
@@ -306,7 +306,7 @@ class DeskproSDK extends React.Component {
     const { sdk } = this.props;
 
     return (
-      <DrawerList>
+      <ul className="dp-list dp-column-drawer-list">
         <li
           className="dp-column-drawer--with-controls"
           style={{ display: sdk.ui.collapsed ? 'none' : 'block' }}
@@ -317,7 +317,7 @@ class DeskproSDK extends React.Component {
             : this.renderApp()
           }
         </li>
-      </DrawerList>
+      </ul>
     );
   }
 }
