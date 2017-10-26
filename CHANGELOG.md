@@ -1,5 +1,9 @@
 ## Upcoming
 
+## v0.1.0 - 2017-10-26
+
+* Removes @deskpro/react-components dependency
+
 ## v0.0.9 - 2017-10-26
 
 * Exports createApp from @deskpro/apps/sdk-core
