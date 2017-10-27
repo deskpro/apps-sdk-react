@@ -7,7 +7,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "test": "jest ./tests/*/*.test.*",
-    "build": "rm -rf lib/* && babel --loose es6.modules -d lib/ src/ && webpack -p --progress --env.production",
+    "build:lib": "rm -rf lib/* && babel --loose es6.modules -d lib/ src/",
+    "build:dist": "webpack -p --progress --env.production",
+    "build": "npm run build:lib && npm run build:dist",
     "lint": "eslint src/* --cache --cache-location=.cache/eslint --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
