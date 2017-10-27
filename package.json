@@ -7,7 +7,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "test": "jest ./tests/*/*.test.*",
-    "build": "rm -rf lib/* && babel --loose es6.modules -d lib/ src/ && webpack -p --progress --env.production",
+    "build:lib": "rm -rf lib/* && babel --loose es6.modules -d lib/ src/",
+    "build:dist": "webpack -p --progress --env.production",
+    "build": "npm run build:lib && npm run build:dist",
     "lint": "eslint src/* --cache --cache-location=.cache/eslint --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
@@ -53,7 +55,7 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "@deskpro/apps-sdk-core": "^1.0.0-beta.22",
+    "@deskpro/apps-sdk-core": "^1.0.0-beta.23",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-redux": "^5.0.6",
