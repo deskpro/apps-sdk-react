@@ -45,6 +45,15 @@ test('sdkActions.collapsed', () => {
   expect(sdkActions.collapsed()).toEqual(expectedAction);
 });
 
+test('sdkActions.clearError', () => {
+  const expectedAction = {
+    type: types.SDK_CLEAR_ERROR,
+    id:   1
+  };
+
+  expect(sdkActions.clearError(1)).toEqual(expectedAction);
+});
+
 test('sdkActions.clearErrors', () => {
   const expectedAction = {
     type: types.SDK_CLEAR_ERRORS

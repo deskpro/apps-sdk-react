@@ -114,6 +114,24 @@ function reduceClearErrors(state) {
 }
 
 /**
+ * Handles types.SDK_CLEAR_ERROR
+ *
+ * @param {*} state
+ * @param {*} action
+ * @returns {*}
+ */
+function reduceClearError(state, action) {
+  const errors = state.errors.filter((error) => {
+    return error.id !== action.id;
+  });
+
+  return {
+    ...state,
+    errors
+  };
+}
+
+/**
  * Handles types.SDK_COLLAPSED
  *
  * @param {*} state
@@ -260,6 +278,7 @@ const reducers = {
   [types.SDK_REFRESHING]:     reduceRefreshing,
   [types.SDK_LOADING]:        reduceLoading,
   [types.SDK_ERROR]:          reduceError,
+  [types.SDK_CLEAR_ERROR]:    reduceClearError,
   [types.SDK_CLEAR_ERRORS]:   reduceClearErrors,
   [types.SDK_COLLAPSED]:      reduceCollapsed,
   [types.SDK_ME]:             reduceMe,

@@ -86,6 +86,19 @@ export function error(e) {
 }
 
 /**
+ * Clears the error with the given id
+ *
+ * @param {number} id
+ * @returns {{type: SDK_CLEAR_ERROR, id: number}}
+ */
+export function clearError(id) {
+  return {
+    type: types.SDK_CLEAR_ERROR,
+    id
+  };
+}
+
+/**
  * Clears the list of errors
  *
  * @returns {{type: SDK_CLEAR_ERRORS}}

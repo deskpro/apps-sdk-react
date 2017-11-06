@@ -64,6 +64,15 @@ const data = [
   },
   {
     action: {
+      type: types.SDK_CLEAR_ERROR,
+      id:   1
+    },
+    expected: {
+      errors: []
+    }
+  },
+  {
+    action: {
       type:  types.SDK_CLEAR_ERRORS,
       error: 'testing'
     },

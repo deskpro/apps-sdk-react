@@ -254,9 +254,18 @@ class DeskproSDK extends React.Component {
    * @returns {Array}
    */
   renderErrors = () => {
-    return this.props.sdk.errors.map(error => (
+    const { sdk, actions } = this.props;
+
+    return sdk.errors.map(error => (
       <div key={error.id} className="dp-alert dp-alert--danger dp-bg--danger" style={{ margin: 10 }}>
-        {error.msg}
+        <div className="dp-alert__content">
+          {error.msg}
+        </div>
+        <div
+          title="Close"
+          className="fa fa-close dp-alert__close"
+          onClick={() => actions.clearError(error.id)}
+        />
       </div>
     ));
   };

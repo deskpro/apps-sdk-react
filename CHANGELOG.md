@@ -1,5 +1,8 @@
 ## Upcoming
 
+## v0.1.4 - 2017-11-06
+
+* Adds ability to remove errors
 
 ## v0.1.3 - 2017-11-06
 
