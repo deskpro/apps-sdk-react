@@ -1,5 +1,8 @@
 ## Upcoming
 
+
+## v0.1.3 - 2017-11-06
+
 * Injects deskpro styles into iframe head
 * Adds separate build scripts for lib and dist artifacts
 
