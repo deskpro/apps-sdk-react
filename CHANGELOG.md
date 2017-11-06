@@ -1,5 +1,8 @@
 ## Upcoming
 
+* Injects deskpro styles into iframe head
+* Adds separate build scripts for lib and dist artifacts
+
 ## v0.1.2 - 2017-10-26
 
 * Adds .npmignore file

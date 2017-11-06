@@ -1,19 +1,45 @@
 import { UIConstants, UIEvents } from '@deskpro/apps-sdk-core';
 
-let faLoaded = false;
+let stylesLoaded = false;
 
-/**
- * Include the Font Awesome stylesheet
- */
-function loadFontAwesome() {
-  if (!faLoaded) {
-    const link = document.createElement('link');
-    link.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-    link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('type', 'text/css');
-    link.setAttribute('media', 'all');
-    document.getElementsByTagName('head')[0].appendChild(link);
-    faLoaded = true;
+function linkStyles() {
+  if (!stylesLoaded) {
+    const css = `
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    html.deskpro-sidebar {
+        height: inherit;
+        line-height: normal;
+        margin: 0;
+        padding: 0;
+    }
+
+    .deskpro-sidebar body {
+        height: inherit;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: #4c4f50;
+        line-height: normal;
+        margin: 0;
+        padding: 0;
+    }`;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    if (style.styleSheet) {
+      style.styleSheet.cssText = css;
+    } else {
+      style.appendChild(document.createTextNode(css));
+    }
+
+    const head = document.head || document.getElementsByTagName('head')[0];
+    head.appendChild(style);
+    stylesLoaded = true;
   }
 }
 
@@ -27,7 +53,7 @@ function loadFontAwesome() {
  * @returns {HTMLElement}
  */
 export function createToolbar(app, title, icon) {
-  loadFontAwesome();
+  linkStyles();
 
   const toolbar = document.createElement('div');
   toolbar.setAttribute('id', 'deskpro-toolbar');
