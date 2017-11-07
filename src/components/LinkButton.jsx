@@ -67,6 +67,7 @@ class LinkButton extends React.Component {
   handleClick = (e) => {
     this.props.onClick(e);
     if (!e.defaultPrevented) {
+      e.preventDefault();
       this.context.route.to(this.props.to, this.props.params);
     }
   };

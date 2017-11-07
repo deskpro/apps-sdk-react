@@ -1,5 +1,8 @@
 ## Upcoming
 
+* Removes dist directory from repo
+* LinkButton prevents default when clicked
+
 ## v0.1.4 - 2017-11-06
 
 * Adds ability to remove errors
