@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { dpappPropType } from './props';
-import * as sdkActions from '../actions/sdkActions';
 import Storage from './storage';
 import Route from './route';
 import UI from './ui';
@@ -34,6 +33,7 @@ export function sdkProps(props) {
     route,
     oauth,
     dpapp,
+    store,
     me,
     ui
   };

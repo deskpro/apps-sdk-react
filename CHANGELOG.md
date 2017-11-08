@@ -1,5 +1,6 @@
 ## Upcoming
 
+* Adds 'store' to connected props
 * Removes dist directory from repo
 * LinkButton prevents default when clicked
 
