@@ -1,5 +1,7 @@
 ## Upcoming
 
+## v0.1.6 - 2017-11-08
+
 * Adds 'store' to connected props
 * Removes dist directory from repo
 * LinkButton prevents default when clicked
