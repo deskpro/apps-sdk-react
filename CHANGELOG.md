@@ -1,5 +1,10 @@
 ## Upcoming
 
+
+## v0.1.9
+
+* Uses @deskpro/apps-sdk-core v1.0.0-beta.25
+
 ## v0.1.6 - 2017-11-08
 
 * Adds 'store' to connected props
