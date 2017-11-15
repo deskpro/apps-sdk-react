@@ -1,6 +1,10 @@
 ## Upcoming
 
 
+## v0.2.0
+
+* Adds sdkTestRender
+
 ## v0.1.9
 
 * Uses @deskpro/apps-sdk-core v1.0.0-beta.25
