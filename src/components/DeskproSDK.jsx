@@ -57,6 +57,11 @@ class DeskproSDK extends React.Component {
     actions: PropTypes.object.isRequired,
 
     /**
+     * Sets the initial ready state. Only used for testing.
+     */
+    initialReady: PropTypes.bool,
+
+    /**
      * The app component.
      */
     component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
@@ -71,8 +76,9 @@ class DeskproSDK extends React.Component {
    * Specifies the default values for props
    */
   static defaultProps = {
-    component: null,
-    children:  null
+    component:    null,
+    children:     null,
+    initialReady: false
   };
 
   /**
@@ -124,9 +130,9 @@ class DeskproSDK extends React.Component {
    * @returns {Promise}
    */
   bootstrap = () => {
-    const { actions } = this.props;
+    const { actions, initialReady } = this.props;
 
-    actions.ready(false);
+    actions.ready(initialReady);
     return Promise.all([
       ...this.bootstrapMe(),
       ...this.bootstrapTabData(),
