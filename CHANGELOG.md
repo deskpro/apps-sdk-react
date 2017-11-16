@@ -1,14 +1,14 @@
 ## Upcoming
 
-## v0.2.1
+## v0.2.1 - 2017-11-16
 
-* Sets React as a peer dependency
+* Fix for invariant violation error
 
-## v0.2.0
+## v0.2.0 - 2017-11-15
 
 * Adds sdkTestRender
 
-## v0.1.9
+## v0.1.9 - 2017-11-10
 
 * Uses @deskpro/apps-sdk-core v1.0.0-beta.25
 

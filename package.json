@@ -1,6 +1,6 @@
 {
   "name": "@deskpro/apps-sdk-react",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "An SDK for building DeskPRO Apps powered by the React library.",
   "main": "lib/index.js",
   "private": false,
@@ -13,7 +13,8 @@
     "lint": "eslint src/* --cache --cache-location=.cache/eslint --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "rimraf node_modules/react"
   },
   "author": "DeskPRO <team@deskpro.com>",
   "license": "BSD-3-Clause",
@@ -64,9 +65,6 @@
     "redux": "^3.7.2",
     "redux-form": "^7.0.4",
     "redux-thunk": "^2.2.0"
-  },
-  "peerDependencies": {
-    "react": "^15.6.2"
   },
   "jest": {
     "modulePaths": [
