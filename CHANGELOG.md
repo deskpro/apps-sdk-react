@@ -2,7 +2,7 @@
 
 ## v0.2.1 - 2017-11-16
 
-* Fix for invariant violation error
+* Removes sdkTestRender
 
 ## v0.2.0 - 2017-11-15
 
