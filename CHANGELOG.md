@@ -1,5 +1,8 @@
 ## Upcoming
 
+## v0.2.1
+
+* Sets React as a peer dependency
 
 ## v0.2.0
 
