@@ -31,7 +31,7 @@ function splitKey(key) {
 function reduceReady(state, action) {
   return {
     ...state,
-    ready: action.ready
+    readyForApp: action.ready
   };
 }
 

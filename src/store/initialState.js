@@ -5,6 +5,7 @@ export default {
     tabData: {},
     errors:  [],
     ready:   false,
+    readyForApp:   false,
     oauth:   {
       providers: {}
     },
