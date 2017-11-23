@@ -1,5 +1,9 @@
 ## Upcoming
 
+* Fixes issues causing the app to be mounted several times instead of once
+* Fixes error to create the app when app passed as prop
+* Uses @deskpro/apps-sdk-core v1.0.0-beta.26
+
 ## v0.2.1 - 2017-11-16
 
 * Removes sdkTestRender
