@@ -301,14 +301,17 @@ class DeskproSDK extends React.Component {
       throw new Error('App component not set.');
     }
 
+    if (component && children) {
+      throw new Error('You can have either the App as a property or as a child');
+    }
+
+    const appProps = sdkProps(this.props);
+
     return (
       <div>
         {sdk.ui.loading && this.renderLoading()}
         <div style={{ display: (sdk.ui.loading ? 'none' : 'block') }}>
-          {React.cloneElement(
-            component || React.Children.only(children),
-            sdkProps(this.props)
-          )}
+          {component ? React.createElement(component, appProps): React.cloneElement(React.Children.only(children), appProps)}
         </div>
       </div>
     );
@@ -327,7 +330,7 @@ class DeskproSDK extends React.Component {
           style={{ display: sdk.ui.collapsed ? 'none' : 'block' }}
         >
           {this.renderErrors()}
-          {!sdk.ready
+          {!sdk.readyForApp
             ? this.renderLoading()
             : this.renderApp()
           }

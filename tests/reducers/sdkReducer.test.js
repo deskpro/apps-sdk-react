@@ -11,7 +11,7 @@ const data = [
       ready: true
     },
     expected: {
-      ready: true
+      readyForApp: true
     }
   },
   {
