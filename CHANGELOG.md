@@ -1,4 +1,8 @@
-## v0.2.3 - 2017-11-24
+## v0.2.4 - 2017-12-13
+
+* Reset margins and padding of the apps container
+
+## v0.2.3 - 2017-12-13
 
 * Removes hardcoded width, margins, font size and font-face of the apps container 
 
