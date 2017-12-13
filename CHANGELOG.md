@@ -1,4 +1,8 @@
-## Upcoming
+## v0.2.3 - 2017-11-24
+
+* Removes hardcoded width, margins, font size and font-face of the apps container 
+
+## v0.2.2 - 2017-11-24
 
 * Fixes issues causing the app to be mounted several times instead of once
 * Fixes error to create the app when app passed as prop
