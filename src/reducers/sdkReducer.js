@@ -184,7 +184,6 @@ function reduceToRoute(state, action) {
   const prevRoute = state.route;
   if (prevRoute.location === action.location) {
     if (JSON.stringify(prevRoute.params) === JSON.stringify(action.params)) {
-      console.error('Route infinite loop detected.');
       return state;
     }
   }

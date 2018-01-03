@@ -1,3 +1,7 @@
+## v0.2.5 - 2018-01-02
+
+* Removes infinite route error
+
 ## v0.2.4 - 2017-12-13
 
 * Reset margins and padding of the apps container
