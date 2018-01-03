@@ -1,3 +1,7 @@
+## v0.2.7 - 2018-01-03
+
+* Adds ellipsis to app heading title
+
 ## v0.2.6 - 2018-01-03
 
 * Adds event listener to Route class

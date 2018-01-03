@@ -57,7 +57,9 @@ export function createToolbar(app, title, icon) {
         </div>
         <img src="${icon}" style="width: 16px; height: 16px; border: 0;" />
       </div>
-      ${title}
+      <div class="deskpro-toolbar__title" style="max-width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        ${title}
+      </div>
       <i
         id="deskpro-toolbar__collapse"
         class="fa fa-caret-up dp-icon dp-icon--s dp-column-drawer__arrow"
