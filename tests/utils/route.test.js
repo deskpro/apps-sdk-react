@@ -28,3 +28,24 @@ test('Route dispatches a location', () => {
     params:   {}
   });
 });
+
+test('Route triggers events', () => {
+  const dispatch = jest.fn();
+  const data     = {
+    location: 'testing',
+    params:   {}
+  };
+  const route = new Route(dispatch, data);
+
+  const cb = jest.fn();
+  route.on('to', cb);
+  route.to('testing2');
+  route.to('testing3');
+
+  expect(cb).toHaveBeenCalledTimes(2);
+
+  route.off('to', cb);
+  route.to('testing4');
+
+  expect(cb).toHaveBeenCalledTimes(2);
+});

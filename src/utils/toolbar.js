@@ -80,15 +80,20 @@ export function createToolbar(app, title, icon) {
   });
 
   const collapse = toolbar.querySelector('#deskpro-toolbar__collapse');
+  app.on(UIEvents.EVENT_UI_DISPLAYCHANGED, () => {
+    if (app.ui.isExpanded()) {
+      collapse.classList.add('fa-caret-up');
+      collapse.classList.remove('fa-caret-down');
+    } else {
+      collapse.classList.remove('fa-caret-up');
+      collapse.classList.add('fa-caret-down');
+    }
+  });
   collapse.addEventListener('click', () => {
     if (app.ui.isExpanded()) {
       app.ui.collapse();
-      collapse.classList.remove('fa-caret-up');
-      collapse.classList.add('fa-caret-down');
     } else {
       app.ui.expand();
-      collapse.classList.add('fa-caret-up');
-      collapse.classList.remove('fa-caret-down');
     }
   });
 

@@ -1,3 +1,7 @@
+## v0.2.6 - 2018-01-03
+
+* Adds event listener to Route class
+
 ## v0.2.5 - 2018-01-02
 
 * Removes infinite route error

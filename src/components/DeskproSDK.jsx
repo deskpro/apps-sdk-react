@@ -311,7 +311,10 @@ class DeskproSDK extends React.Component {
       <div>
         {sdk.ui.loading && this.renderLoading()}
         <div style={{ display: (sdk.ui.loading ? 'none' : 'block') }}>
-          {component ? React.createElement(component, appProps): React.cloneElement(React.Children.only(children), appProps)}
+          {component
+            ? React.createElement(component, appProps)
+            : React.cloneElement(React.Children.only(children), appProps)
+          }
         </div>
       </div>
     );
