@@ -195,7 +195,11 @@ class DeskproSDK extends React.Component {
     const { dpapp, actions } = this.props;
 
     const promises = [];
-    const items = dpapp.manifest.storage || dpapp.manifest.state;
+    let items = dpapp.manifest.storage || dpapp.manifest.state;
+    if (dpapp.manifest.settings && dpapp.manifest.settings.length > 0) {
+      items = items.concat(dpapp.manifest.settings);
+    }
+
     if (items && items.length > 0) {
       const appKeys    = [];
       const entityKeys = [];

@@ -1,3 +1,7 @@
+## v0.2.8 - 2017-02-28
+
+* Auto fetches manifest settings
+
 ## v0.2.7 - 2018-01-03
 
 * Adds ellipsis to app heading title
