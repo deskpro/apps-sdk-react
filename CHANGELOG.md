@@ -1,3 +1,7 @@
+## v0.2.9 - 2018-03-22
+
+  * Uses @deskpro/apps-sdk-core v1.0.0-beta.27
+ 
 ## v0.2.8 - 2017-02-28
 
 * Auto fetches manifest settings
