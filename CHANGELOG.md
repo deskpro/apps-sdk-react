@@ -1,10 +1,14 @@
+## v0.2.11 - 2018-03-23
+
+* Uses @deskpro/apps-sdk-core v1.0.0-beta.28
+
 ## v0.2.10 - 2018-03-22
 
-  * Adds a factory for wrapping components into the DeskproSDK container
+* Adds a factory for wrapping components into the DeskproSDK container
   
 ## v0.2.9 - 2018-03-22
 
-  * Uses @deskpro/apps-sdk-core v1.0.0-beta.27
+* Uses @deskpro/apps-sdk-core v1.0.0-beta.27
  
 ## v0.2.8 - 2017-02-28
 
