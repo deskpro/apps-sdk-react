@@ -1,3 +1,7 @@
+## v0.2.12 - 2018-03-26
+
+* Updates package.json and npm-shrinkwrap.json
+
 ## v0.2.11 - 2018-03-23
 
 * Uses @deskpro/apps-sdk-core v1.0.0-beta.28
