@@ -1,6 +1,6 @@
 {
   "name": "@deskpro/apps-sdk-react",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "dependencies": {
     "@babel/code-frame": {
       "version": "7.0.0-beta.42",
