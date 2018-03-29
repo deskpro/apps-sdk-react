@@ -7,7 +7,9 @@ import DeskproSDK from '../../src/components/DeskproSDK';
 const mockStore = configureMockStore();
 const dpapp = {
   context: {
-    getTabData: () => Promise.resolve()
+    hostUI: {
+      getTabData: () => Promise.resolve()
+    }
   },
   on:      () => {},
   oauth:   {},
