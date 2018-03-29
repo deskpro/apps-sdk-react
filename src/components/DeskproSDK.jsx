@@ -174,7 +174,7 @@ class DeskproSDK extends React.Component {
   bootstrapTabData = () => {
     const { dpapp, actions } = this.props;
 
-    const promise = dpapp.context.getTabData()
+    const promise = dpapp.context.hostUI.getTabData()
       .then((resp) => {
         try {
           return Promise.resolve(actions.tabData(resp.api_data));
