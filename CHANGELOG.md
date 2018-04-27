@@ -1,5 +1,7 @@
 ## [Unreleased][]
 
+## [0.2.14][] - 2018-04-27
+
 ### Changed
 
 * Uses @deskpro/apps-sdk-core v1.0.1
@@ -177,3 +179,7 @@
 ## [v0.0.5][] - 2017-10-24
 
 * Initial public release
+
+
+[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.14...HEAD
+[0.2.14]: https://github.com/deskpro/apps-sdk-react/tree/v0.2.14
