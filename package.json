@@ -13,7 +13,8 @@
     "lint": "eslint src/* --cache --cache-location=.cache/eslint --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "author": "DeskPRO <team@deskpro.com>",
   "license": "BSD-3-Clause",
@@ -26,7 +27,7 @@
     "url": "https://github.com/deskpro/apps-sdk-react/issues"
   },
   "devDependencies": {
-    "@deskpro/apps-sdk-core": "1.0.0-beta.29",
+    "@deskpro/apps-sdk-core": "1.0.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -74,5 +75,9 @@
     "*.{js,jsx}": [
       "eslint"
     ]
+  },
+  "optionalDependencies": {
+    "changelog-verify": "1.1.0",
+    "version-changelog": "3.1.0"
   }
 }
