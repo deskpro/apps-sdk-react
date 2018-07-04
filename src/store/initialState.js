@@ -2,7 +2,6 @@ export default {
   form: {},
   sdk:  {
     me:      {},
-    tabData: {},
     errors:  [],
     ready:   false,
     readyForApp:   false,

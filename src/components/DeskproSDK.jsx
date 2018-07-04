@@ -135,7 +135,6 @@ class DeskproSDK extends React.Component {
     actions.ready(ready);
     return Promise.all([
       ...this.bootstrapMe(),
-      ...this.bootstrapTabData(),
       ...this.bootstrapStorage()
     ])
       .then(() => {
@@ -158,26 +157,6 @@ class DeskproSDK extends React.Component {
       .then((resp) => {
         try {
           return Promise.resolve(actions.me(resp.body.data.person));
-        } catch (e) {
-          return Promise.resolve({});
-        }
-      });
-
-    return [promise];
-  };
-
-  /**
-   * Fetches the data for the active tab
-   *
-   * @returns {Promise[]}
-   */
-  bootstrapTabData = () => {
-    const { dpapp, actions } = this.props;
-
-    const promise = dpapp.context.hostUI.getTabData()
-      .then((resp) => {
-        try {
-          return Promise.resolve(actions.tabData(resp.api_data));
         } catch (e) {
           return Promise.resolve({});
         }

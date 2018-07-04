@@ -17,7 +17,6 @@ export function sdkProps(props) {
 
   const dispatch  = store.dispatch;
   const me        = Object.assign({}, sdk.me);
-  const tabData   = Object.assign({}, sdk.tabData);
   const context   = dpapp.context;
   const oauth     = dpapp.oauth;
   const storage   = new Storage(dispatch, sdk.storage);
@@ -29,7 +28,6 @@ export function sdkProps(props) {
     context,
     storage,
     dispatch,
-    tabData,
     route,
     oauth,
     dpapp,

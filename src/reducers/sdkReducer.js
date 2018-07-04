@@ -162,20 +162,6 @@ function reduceMe(state, action) {
 }
 
 /**
- * Handles types.SDK_TAB_DATA
- *
- * @param {*} state
- * @param {*} action
- * @returns {*}
- */
-function reduceTabData(state, action) {
-  return {
-    ...state,
-    tabData: Object.assign({}, action.data)
-  };
-}
-
-/**
  * @param {*} state
  * @param {*} action
  * @returns {*}
@@ -281,7 +267,6 @@ const reducers = {
   [types.SDK_CLEAR_ERRORS]:   reduceClearErrors,
   [types.SDK_COLLAPSED]:      reduceCollapsed,
   [types.SDK_ME]:             reduceMe,
-  [types.SDK_TAB_DATA]:       reduceTabData,
   [types.SDK_TO_ROUTE]:       reduceToRoute,
   [types.SDK_APP_VALUE]:      reduceAppValue,
   [types.SDK_ENTITY_VALUE]:   reduceEntityValue,

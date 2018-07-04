@@ -1,5 +1,9 @@
 ## [Unreleased][]
 
+### Changed
+
+  * tabData property is no longer used
+
 ## [0.2.14][] - 2018-04-27
 
 ### Changed

@@ -136,19 +136,6 @@ export function me(data) {
 }
 
 /**
- * Sets the data for the currently opened tab
- *
- * @param {*} data
- * @returns {{type: SDK_TAB_DATA, data: *}}
- */
-export function tabData(data) {
-  return {
-    type: types.SDK_TAB_DATA,
-    data
-  };
-}
-
-/**
  * Changes the route to the given location with the given params
  *
  * @param {string} location
