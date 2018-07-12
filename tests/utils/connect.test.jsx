@@ -11,7 +11,6 @@ configure({ adapter: new Adapter() });
 const oauth    = {};
 const context  = {};
 const route    = {};
-const tabData  = {};
 const me       = {};
 const ui       = {};
 const dispatch = () => {};
@@ -33,7 +32,6 @@ const sdk = {
   },
   storage,
   route,
-  tabData,
   me
 };
 
@@ -49,7 +47,6 @@ test('sdkProps correctly builds sdk props from initial props', () => {
     dispatch,
     context,
     storage,
-    tabData,
     route,
     dpapp,
     me,
@@ -69,7 +66,6 @@ test('dpappProvider passes props to the wrapped component', () => {
   const expected = {
     dispatch,
     context,
-    tabData,
     dpapp,
     me
   };

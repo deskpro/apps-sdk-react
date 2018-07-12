@@ -72,16 +72,6 @@ test('sdkActions.me', () => {
   expect(sdkActions.me(data)).toEqual(expectedAction);
 });
 
-test('sdkActions.tabData', () => {
-  const data = {};
-  const expectedAction = {
-    type: types.SDK_TAB_DATA,
-    data
-  };
-
-  expect(sdkActions.tabData(data)).toEqual(expectedAction);
-});
-
 test('sdkActions.toRoute', () => {
   const location = 'testing';
   const params   = {};

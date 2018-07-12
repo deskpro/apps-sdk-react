@@ -1,6 +1,6 @@
 {
   "name": "@deskpro/apps-sdk-react",
-  "version": "0.2.14",
+  "version": "1.0.0",
   "description": "An SDK for building DeskPRO Apps powered by the React library.",
   "main": "lib/index.js",
   "private": false,
@@ -27,7 +27,7 @@
     "url": "https://github.com/deskpro/apps-sdk-react/issues"
   },
   "devDependencies": {
-    "@deskpro/apps-sdk-core": "1.0.1",
+    "@deskpro/apps-sdk-core": "^2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",

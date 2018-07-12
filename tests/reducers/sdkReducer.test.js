@@ -91,15 +91,6 @@ const data = [
   },
   {
     action: {
-      type: types.SDK_TAB_DATA,
-      data: { foo: 'bar' }
-    },
-    expected: {
-      tabData: { foo: 'bar' }
-    }
-  },
-  {
-    action: {
       type:     types.SDK_TO_ROUTE,
       location: 'testing',
       params:   { foo: 'bar' }

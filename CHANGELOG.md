@@ -1,5 +1,12 @@
 ## [Unreleased][]
 
+## [1.0.0][] - 2018-07-12
+
+### Changed
+
+* Uses @deskpro/apps-sdk-core v2.0.0
+* tabData is no longer available via props
+
 ## [0.2.14][] - 2018-04-27
 
 ### Changed
@@ -181,5 +188,7 @@
 * Initial public release
 
 
-[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.14...HEAD
+[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.15...v1.0.0
+[0.2.15]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.14...v0.2.15
 [0.2.14]: https://github.com/deskpro/apps-sdk-react/tree/v0.2.14
