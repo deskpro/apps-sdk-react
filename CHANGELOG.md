@@ -1,5 +1,9 @@
 ## [Unreleased][]
 
+## [2.0.0-beta.1][] - 2018-07-22
+
+* replaces @deskpro/react-components with @deskpro/apps-components (breaking change)
+
 ## [1.0.0][] - 2018-07-12
 
 ### Changed
@@ -188,7 +192,8 @@
 * Initial public release
 
 
-[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.1...HEAD
+[2.0.0-0]: https://github.com/deskpro/apps-sdk-react/compare/v1.0.0...v2.0.0-beta.1
 [1.0.0]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.15...v1.0.0
 [0.2.15]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.14...v0.2.15
 [0.2.14]: https://github.com/deskpro/apps-sdk-react/tree/v0.2.14

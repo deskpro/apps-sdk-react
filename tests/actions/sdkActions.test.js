@@ -37,14 +37,6 @@ test('sdkActions.loading', () => {
   expect(sdkActions.loading()).toEqual(expectedAction);
 });
 
-test('sdkActions.collapsed', () => {
-  const expectedAction = {
-    type:      types.SDK_COLLAPSED,
-    collapsed: true
-  };
-  expect(sdkActions.collapsed()).toEqual(expectedAction);
-});
-
 test('sdkActions.clearError', () => {
   const expectedAction = {
     type: types.SDK_CLEAR_ERROR,
@@ -60,16 +52,6 @@ test('sdkActions.clearErrors', () => {
   };
 
   expect(sdkActions.clearErrors()).toEqual(expectedAction);
-});
-
-test('sdkActions.me', () => {
-  const data = {};
-  const expectedAction = {
-    type: types.SDK_ME,
-    data
-  };
-
-  expect(sdkActions.me(data)).toEqual(expectedAction);
 });
 
 test('sdkActions.toRoute', () => {

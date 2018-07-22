@@ -33,6 +33,56 @@ export function createBatchStorage(obj) {
 }
 
 /**
+ * @return {function(function, function, object): Promise<any[]>}
+ */
+export function bootstrap()
+{
+  return function (dispatch, getState, dpapp)
+  {
+
+    let items = dpapp.manifest.storage || dpapp.manifest.state;
+    if (dpapp.manifest.settings && dpapp.manifest.settings.length > 0) {
+      items = items.concat(dpapp.manifest.settings);
+    }
+
+    const appKeys    = [];
+    const entityKeys = [];
+    const oauthKeys  = [];
+
+    if (items && items.length > 0) {
+
+      items.forEach((item) => {
+        if (item.name.indexOf('oauth:') === 0) {
+          oauthKeys.push(
+            item.name.replace('oauth:', '')
+          );
+        } else if (item.name.indexOf('entity:') === 0) {
+          entityKeys.push(
+            item.name.replace('entity:', '')
+          );
+        } else {
+          appKeys.push(
+            item.name.replace('app:', '')
+          );
+        }
+      });
+    }
+
+    const promises = [
+      dispatch(me()),
+      appKeys.length > 0 ? dispatch(appGetStorage(appKeys)) : null,
+      entityKeys.length > 0 ? dispatch(entityGetStorage(entityKeys)) : null
+    ].concat(
+      oauthKeys.map(key => dispatch(oauthGetSettings(key)))
+    ).filter(
+      p => !!p
+    );
+
+    return Promise.all(promises);
+  }
+}
+
+/**
  * Sets the app in the ready state
  *
  * @param {bool} r
@@ -48,7 +98,7 @@ export function ready(r = true) {
 /**
  * Sets the app in/out of a refreshing state
  *
- * @param {bool} r
+ * @param {boolean} r
  * @returns {{type: SDK_REFRESHING, refreshing: boolean}}
  */
 export function refreshing(r = true) {
@@ -70,6 +120,7 @@ export function loading(l = true) {
     loading: l
   };
 }
+
 
 /**
  * Pushes the given error to the list of stored errors
@@ -109,29 +160,25 @@ export function clearErrors() {
   };
 }
 
-/**
- * Shows or hides the app
- *
- * @param {bool} [c]
- * @returns {{type: SDK_COLLAPSED, collapsed: *}}
- */
-export function collapsed(c = true) {
-  return {
-    type:      types.SDK_COLLAPSED,
-    collapsed: c
-  };
-}
 
 /**
- * Sets the "me" object
+ * loads the "me" object
  *
- * @param {*} data
- * @returns {{type: SDK_ME, me: *}}
+ * @return {function(function, function, object): Promise}
  */
-export function me(data) {
-  return {
-    type: types.SDK_ME,
-    data
+export function me()
+{
+  return function (dispatch, getStorage, dpapp) {
+    return dpapp.restApi.get('/me')
+      .then((resp) => {
+        try {
+          const data = resp.body.data.person;
+          dispatch({ type: types.SDK_ME, data});
+          return data;
+        } catch (e) {
+          return {};
+        }
+      })
   };
 }
 

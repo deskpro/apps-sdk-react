@@ -11,8 +11,7 @@ export default {
     },
     ui: {
       loading:    false,
-      collapsed:  false,
-      refreshing: false
+      refreshing: false,
     },
     route: {
       location: 'index',

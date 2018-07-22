@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { AppEvents, UIEvents } from '@deskpro/apps-sdk-core';
+import { AppEvents, UIEvents, UIConstants } from '@deskpro/apps-sdk-core';
+import { AppFrame, Action } from '@deskpro/apps-components';
+
+
 import { dpappPropType, storePropType } from '../utils/props';
 import * as sdkActions from '../actions/sdkActions';
 import { sdkProps } from '../utils/connect';
@@ -35,6 +38,7 @@ import Loader from './Loader';
  * ```
  */
 class DeskproSDK extends React.Component {
+
   static propTypes = {
     /**
      * Instance of sdk-core.
@@ -85,9 +89,18 @@ class DeskproSDK extends React.Component {
    * Context values passed down to children that declare contextTypes
    */
   static childContextTypes = {
+
     dpapp: dpappPropType,
+
     store: storePropType,
+
     route: PropTypes.object
+  };
+
+  state = {
+
+    uiChangeRequests: 0
+
   };
 
   /**
@@ -109,9 +122,12 @@ class DeskproSDK extends React.Component {
   componentDidMount = () => {
     const { dpapp } = this.props;
 
-    this.bootstrap();
     dpapp.on(AppEvents.EVENT_REFRESH, this.handleRefresh);
     dpapp.on(UIEvents.EVENT_UI_DISPLAYCHANGED, this.handleDisplayChange);
+    dpapp.on(UIEvents.EVENT_BADGE_COUNTCHANGED, this.handleDisplayChange);
+    dpapp.on(UIEvents.EVENT_BADGE_VISIBILITYCHANGED, this.handleDisplayChange);
+
+    this.bootstrap();
   };
 
   /**
@@ -122,6 +138,8 @@ class DeskproSDK extends React.Component {
 
     dpapp.off(AppEvents.EVENT_REFRESH, this.handleRefresh);
     dpapp.off(UIEvents.EVENT_UI_DISPLAYCHANGED, this.handleDisplayChange);
+    dpapp.off(UIEvents.EVENT_BADGE_COUNTCHANGED, this.handleDisplayChange);
+    dpapp.off(UIEvents.EVENT_BADGE_VISIBILITYCHANGED, this.handleDisplayChange);
   };
 
   /**
@@ -133,10 +151,7 @@ class DeskproSDK extends React.Component {
     const { actions, ready } = this.props;
 
     actions.ready(ready);
-    return Promise.all([
-      ...this.bootstrapMe(),
-      ...this.bootstrapStorage()
-    ])
+    return actions.bootstrap()
       .then(() => {
         return actions.ready();
       })
@@ -146,95 +161,24 @@ class DeskproSDK extends React.Component {
   };
 
   /**
-   * Fetches the "me" data for the user
-   *
-   * @returns {Promise[]}
-   */
-  bootstrapMe = () => {
-    const { dpapp, actions } = this.props;
-
-    const promise = dpapp.restApi.get('/me')
-      .then((resp) => {
-        try {
-          return Promise.resolve(actions.me(resp.body.data.person));
-        } catch (e) {
-          return Promise.resolve({});
-        }
-      });
-
-    return [promise];
-  };
-
-  /**
-   * Fetches the manifest storage values
-   *
-   * @returns {Promise[]}
-   */
-  bootstrapStorage = () => {
-    const { dpapp, actions } = this.props;
-
-    const promises = [];
-    let items = dpapp.manifest.storage || dpapp.manifest.state;
-    if (dpapp.manifest.settings && dpapp.manifest.settings.length > 0) {
-      items = items.concat(dpapp.manifest.settings);
-    }
-
-    if (items && items.length > 0) {
-      const appKeys    = [];
-      const entityKeys = [];
-      const oauthKeys  = [];
-
-      items.forEach((item) => {
-        if (item.name.indexOf('oauth:') === 0) {
-          oauthKeys.push(
-            item.name.replace('oauth:', '')
-          );
-        } else if (item.name.indexOf('entity:') === 0) {
-          entityKeys.push(
-            item.name.replace('entity:', '')
-          );
-        } else {
-          appKeys.push(
-            item.name.replace('app:', '')
-          );
-        }
-      });
-
-      if (appKeys.length > 0) {
-        promises.push(actions.appGetStorage(appKeys));
-      }
-      if (entityKeys.length > 0) {
-        promises.push(actions.entityGetStorage(entityKeys));
-      }
-      oauthKeys.forEach((key) => {
-        promises.push(actions.oauthGetSettings(key));
-      });
-    }
-
-    return promises;
-  };
-
-  /**
    * Callback for the AppEvents.EVENT_REFRESH event
    */
   handleRefresh = () => {
     const { actions } = this.props;
 
     actions.refreshing(true);
-    this.bootstrap()
+    return actions.bootstrap()
       .catch((error) => {
         return actions.error(error);
       })
       .then(() => actions.refreshing(false));
   };
 
-  /**
-   * Callback for the UIEvents.EVENT_UI_DISPLAYCHANGED event
-   */
   handleDisplayChange = () => {
-    const { actions, sdk } = this.props;
-
-    actions.collapsed(!sdk.ui.collapsed);
+    // force a re-render
+    this.setState({
+      uiChangeRequests: this.state.uiChangeRequests++
+    });
   };
 
   /**
@@ -290,38 +234,47 @@ class DeskproSDK extends React.Component {
 
     const appProps = sdkProps(this.props);
 
-    return (
-      <div>
-        {sdk.ui.loading && this.renderLoading()}
-        <div style={{ display: (sdk.ui.loading ? 'none' : 'block') }}>
-          {component
-            ? React.createElement(component, appProps)
-            : React.cloneElement(React.Children.only(children), appProps)
-          }
-        </div>
-      </div>
-    );
+    return component
+      ? React.createElement(component, appProps)
+      : React.cloneElement(React.Children.only(children), appProps)
+    ;
+
+    // return (
+    //   <div>
+    //     {sdk.ui.loading && this.renderLoading()}
+    //     <div style={{ display: (sdk.ui.loading ? 'none' : 'block') }}>
+    //       {component
+    //         ? React.createElement(component, appProps)
+    //         : React.cloneElement(React.Children.only(children), appProps)
+    //       }
+    //     </div>
+    //   </div>
+    // );
   };
 
   /**
    * @returns {XML}
    */
   render() {
-    const { sdk } = this.props;
+    const { sdk, dpapp }  = this.props;
 
     return (
-      <ul className="dp-list dp-column-drawer-list">
-        <li
-          className="dp-column-drawer--with-controls"
-          style={{ display: sdk.ui.collapsed ? 'none' : 'block' }}
-        >
-          {this.renderErrors()}
-          {!sdk.readyForApp
-            ? this.renderLoading()
-            : this.renderApp()
-          }
-        </li>
-      </ul>
+      <AppFrame
+        badgeText=  { dpapp.ui.badge === UIConstants.VISIBILITY_VISIBLE ? dpapp.ui.badgeCount : null }
+        display=    { dpapp.ui.isCollapsed() ? 'collapsed' : 'expanded'  }
+        title=      { dpapp.manifest.title }
+        iconUrl=    {"../assets/icon.png"}
+        actions=    {[
+          <Action icon='refresh' onClick={dpapp.refresh} /> ,
+          <Action icon={ dpapp.ui.isCollapsed() ? 'down' : 'up'  } onClick={ dpapp.ui.isCollapsed() ? dpapp.ui.expand : dpapp.ui.collapse } />
+        ]}
+      >
+        {this.renderErrors()}
+        {!sdk.readyForApp
+          ? this.renderLoading()
+          : this.renderApp()
+        }
+      </AppFrame>
     );
   }
 }
@@ -330,9 +283,15 @@ class DeskproSDK extends React.Component {
  * Maps redux state to component props
  *
  * @param {*} state
+ * @param {{ sdk: * }} ownProps
  * @returns {{sdk: *}}
  */
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+
+  if (ownProps && ownProps.sdk) {
+    return {}
+  }
+
   return {
     sdk: Object.assign({}, state.sdk)
   };
@@ -342,9 +301,15 @@ function mapStateToProps(state) {
  * Maps action creators to component props
  *
  * @param {object} dispatch
+ * @param {{ actions: * }} ownProps
  * @returns {{actions: *}}
  */
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, ownProps) {
+
+  if (ownProps && ownProps.actions) {
+    return {};
+  }
+
   return {
     actions: bindActionCreators(sdkActions, dispatch)
   };

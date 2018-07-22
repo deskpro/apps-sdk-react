@@ -1,16 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DeskproSDK renders the prop component 1`] = `
-<ul
-  className="dp-list dp-column-drawer-list"
+<div
+  className="dp-AppFrame is-colapsed"
 >
-  <li
-    className="dp-column-drawer--with-controls"
-    style={
-      Object {
-        "display": "block",
-      }
-    }
+  <div
+    className="dp-AppBar dp-Level"
+  >
+    <div
+      className="dp-LevelLeft"
+    >
+      <div
+        className="dp-AppBarIcon-wrap"
+      >
+        <i
+          className="dp-Icon"
+        >
+          <img
+            alt="My app"
+            src="../assets/icon.png"
+          />
+        </i>
+        <span
+          className="dp-IconBadge"
+        >
+          5
+        </span>
+      </div>
+      <span
+        className="dp-AppBarTitle"
+      >
+        My app
+      </span>
+    </div>
+    <div
+      className="dp-LevelRight"
+    >
+      <div
+        className="dp-ActionList"
+      >
+        <a
+          className="dp-ActionListItem dp-ActionListIcon dp---is-hoverable"
+        >
+          <i
+            className="dp-RefreshIcon"
+          />
+        </a>
+        <a
+          className="dp-ActionListItem dp-ActionListIcon dp---is-hoverable"
+        >
+          <i
+            className="dp-IconArrow"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <section
+    className="dp-AppBody dp-Section"
   >
     <div
       className="dp-text-center"
@@ -31,21 +78,68 @@ exports[`DeskproSDK renders the prop component 1`] = `
         }
       />
     </div>
-  </li>
-</ul>
+  </section>
+</div>
 `;
 
 exports[`DeskproSDK renders the wrapped component 1`] = `
-<ul
-  className="dp-list dp-column-drawer-list"
+<div
+  className="dp-AppFrame is-colapsed"
 >
-  <li
-    className="dp-column-drawer--with-controls"
-    style={
-      Object {
-        "display": "block",
-      }
-    }
+  <div
+    className="dp-AppBar dp-Level"
+  >
+    <div
+      className="dp-LevelLeft"
+    >
+      <div
+        className="dp-AppBarIcon-wrap"
+      >
+        <i
+          className="dp-Icon"
+        >
+          <img
+            alt="My app"
+            src="../assets/icon.png"
+          />
+        </i>
+        <span
+          className="dp-IconBadge"
+        >
+          5
+        </span>
+      </div>
+      <span
+        className="dp-AppBarTitle"
+      >
+        My app
+      </span>
+    </div>
+    <div
+      className="dp-LevelRight"
+    >
+      <div
+        className="dp-ActionList"
+      >
+        <a
+          className="dp-ActionListItem dp-ActionListIcon dp---is-hoverable"
+        >
+          <i
+            className="dp-RefreshIcon"
+          />
+        </a>
+        <a
+          className="dp-ActionListItem dp-ActionListIcon dp---is-hoverable"
+        >
+          <i
+            className="dp-IconArrow"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <section
+    className="dp-AppBody dp-Section"
   >
     <div
       className="dp-text-center"
@@ -66,6 +160,6 @@ exports[`DeskproSDK renders the wrapped component 1`] = `
         }
       />
     </div>
-  </li>
-</ul>
+  </section>
+</div>
 `;

@@ -22,7 +22,6 @@ const data = [
     expected: {
       ui: {
         loading:    false,
-        collapsed:  false,
         refreshing: true
       }
     }
@@ -35,20 +34,6 @@ const data = [
     expected: {
       ui: {
         loading:    true,
-        collapsed:  false,
-        refreshing: false
-      }
-    }
-  },
-  {
-    action: {
-      type:      types.SDK_COLLAPSED,
-      collapsed: true
-    },
-    expected: {
-      ui: {
-        loading:    false,
-        collapsed:  true,
         refreshing: false
       }
     }

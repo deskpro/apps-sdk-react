@@ -54,6 +54,19 @@ module.exports = (env = {}) => {
           test: /\.jsx?$/,
           exclude: /(node_modules)/,
           loader: require.resolve('babel-loader')
+        },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 1,
+                minimize: false,
+                sourceMap: false,
+              }
+            }
+          ]
         }
       ]
     },
