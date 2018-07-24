@@ -1,8 +1,20 @@
 ## [Unreleased][]
 
+## [2.0.0-beta.2][] - 2018-07-24
+
+### Added
+  
+  *  peerDependencies entries for `@deskpro/apps-components` and `@deskpro/apps-sdk-core`  
+
+### Changed
+
+  * `npm-shrinwrap.json` replaced with `package-lock.json` since this package is intended to be used as a compiled library
+
 ## [2.0.0-beta.1][] - 2018-07-22
 
-* replaces @deskpro/react-components with @deskpro/apps-components (breaking change)
+### Changed
+
+  * replaces @deskpro/react-components with @deskpro/apps-components (breaking change)
 
 ## [1.0.0][] - 2018-07-12
 
@@ -192,7 +204,8 @@
 * Initial public release
 
 
-[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.1...HEAD
+[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.2...HEAD
+[2.0.0-beta.2]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.1...v2.0.0-beta.2
 [2.0.0-0]: https://github.com/deskpro/apps-sdk-react/compare/v1.0.0...v2.0.0-beta.1
 [1.0.0]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.15...v1.0.0
 [0.2.15]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.14...v0.2.15

@@ -1,6 +1,6 @@
 {
   "name": "@deskpro/apps-sdk-react",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "An SDK for building DeskPRO Apps powered by the React library.",
   "main": "lib/index.js",
   "private": false,
@@ -27,7 +27,6 @@
     "url": "https://github.com/deskpro/apps-sdk-react/issues"
   },
   "devDependencies": {
-    "@deskpro/apps-sdk-core": "^2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -59,6 +58,7 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
+    "@deskpro/apps-sdk-core": "^2.0.0",
     "@deskpro/apps-components": "^0.3.6",
     "prop-types": "^15.6.0",
     "raf": "^3.4.0",
@@ -67,6 +67,10 @@
     "redux": "^3.7.2",
     "redux-form": "^7.0.4",
     "redux-thunk": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@deskpro/apps-components": "^0.3.6",
+    "@deskpro/apps-sdk-core": "^2.0.0"
   },
   "jest": {
     "modulePaths": [
