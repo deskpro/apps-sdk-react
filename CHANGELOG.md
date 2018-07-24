@@ -1,5 +1,7 @@
 ## [Unreleased][]
 
+## [2.0.0-beta.3][] - 2018-07-24
+
 ### Changed
 
  * `react-svg-inline` moved from devDependencies to dependencies
@@ -208,7 +210,8 @@
 * Initial public release
 
 
-[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.2...HEAD
+[Unreleased]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.3...HEAD
+[2.0.0-beta.3]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.2...v2.0.0-beta.3
 [2.0.0-beta.2]: https://github.com/deskpro/apps-sdk-react/compare/v2.0.0-beta.1...v2.0.0-beta.2
 [2.0.0-0]: https://github.com/deskpro/apps-sdk-react/compare/v1.0.0...v2.0.0-beta.1
 [1.0.0]: https://github.com/deskpro/apps-sdk-react/compare/v0.2.15...v1.0.0
