@@ -1,5 +1,9 @@
 ## [Unreleased][]
 
+### Changed
+
+ * `react-svg-inline` moved from devDependencies to dependencies
+
 ## [2.0.0-beta.2][] - 2018-07-24
 
 ### Added
